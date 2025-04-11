@@ -1,4 +1,5 @@
 import streamlit as st
+import math 
 
 def calculate_behaviour_index(fear_greed_stock, fear_greed_bitcoin):
   """Calculates the Behaviour Index based on stock and Bitcoin fear and greed indices.
@@ -10,7 +11,7 @@ def calculate_behaviour_index(fear_greed_stock, fear_greed_bitcoin):
   Returns:
     The calculated Behaviour Index.
   """
-  behaviour_index = (fear_greed_stock + fear_greed_bitcoin) / 2
+  behaviour_index = (math.log(fear_greed_stock) + math.log(fear_greed_bitcoin)) / 8
   return behaviour_index
 
 st.title("Behaviour Index Calculator")
